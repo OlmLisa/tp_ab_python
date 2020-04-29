@@ -48,22 +48,23 @@ class ArbreBinaire:
 ##    2. Parcours prefixe sous-arbre gauche.
 ##    3. Parcours prefixe sous-arbre droit.
         
-    def prefixe(self):
-        if(self.noeud == None):
+    def prefixe(self, Arbre):
+        if(Arbre == None):
+            print("return")
             return
-        print(self.noeud)
-        if self.ng!=None:
-            prefixe(self.ng) 
+        print("racine",Arbre)
+        if Arbre.ng!=None:
+            self.prefixe(Arbre.ng)
         if self.nd!=None:
-            prefixe(self.nd)
+            self.prefixe(Arbre.nd)
     
  ######################affichage#############################
 arbre = ArbreBinaire()
 arbre.setNoeud(21)
 arbre.setNd(14)
 arbre.setNg(7)
-print(arbre.getNoeud())
+##print(arbre.getNoeud())
 print(arbre.__str__())
-print(arbre.prefixe())
+arbre.prefixe(arbre)
 
 
